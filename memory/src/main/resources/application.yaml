@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: memory
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        temperature: 0.7
+        options:
+          model: codellama:latest
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG
+
+
+
+

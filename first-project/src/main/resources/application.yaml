@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: first-project
+  ai:
+    openai:
+        api-key: ${OPEN_API_KEY}
+    chat:
+      client:
+        enables: false
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        temperature: 0.7
+        options:
+          model: codellama:latest
+
+server:
+  port: 8081
+
+

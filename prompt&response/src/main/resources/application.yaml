@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: prompt-responses
+  ai:
+    chat:
+      client:
+        enables: false
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        temperature: 0.7
+        options:
+          model: codellama:latest
+
+server:
+  port: 8080
+
+
