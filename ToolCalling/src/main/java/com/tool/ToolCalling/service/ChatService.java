@@ -1,6 +1,7 @@
 package com.tool.ToolCalling.service;
 
 import com.tool.ToolCalling.tools.SimpleDateTimeTool;
+import com.tool.ToolCalling.tools.WeatherTool;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +12,13 @@ public class ChatService {
     private ChatClient chatClient;
     @Autowired
     private SimpleDateTimeTool simpleDateTimeTool;
+    @Autowired
+    private WeatherTool weatherTool;
 
 
     public String getResponse(String query) {
         return chatClient.prompt()
-                .tools(simpleDateTimeTool)
+                .tools(simpleDateTimeTool, weatherTool)
                 .user(query)
                 .call()
                 .content();
