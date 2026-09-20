@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: helpdesk
+
+# PostgreSQL
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/helpdesk"
+    username: "postgres"
+    password: "root1235"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Ollama
+  ai:
+    ollama:
+      base-url: "http://localhost:11434"
+      chat:
+        options:
+          model: llama3.2:3b
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+
