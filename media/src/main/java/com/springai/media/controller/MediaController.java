@@ -33,5 +33,10 @@ public class MediaController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/google")
+    ResponseEntity<String> googleGemini(@RequestParam("query") String query){
+        return ResponseEntity.ok(mediaService.googleGenAiResponse(query));
+    }
+
 
 }
